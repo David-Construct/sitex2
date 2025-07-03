@@ -1,12 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { workProcess } from "@/lib/data";
 
-export const metadata = {
-  title: "Proces de Lucru | David Construct - Etapele Construcției din Lemn",
-  description: "Află cum decurge procesul de lucru la David Construct: de la consultanță și proiectare, la execuție și predare pentru case și construcții din lemn.",
-  keywords: "proces constructie lemn, etape casa lemn, David Construct, consultanta lemn, proiectare lemn"
-}
-
 export default function ProcessPage() {
   return (
     <>

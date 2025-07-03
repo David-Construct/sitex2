@@ -4,12 +4,6 @@ import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
-export const metadata = {
-  title: "Servicii | David Construct - Case și Construcții din Lemn",
-  description: "Descoperă gama completă de servicii David Construct: case din lemn, cabane A-frame, foișoare, terase și anexe realizate cu măiestrie și profesionalism.",
-  keywords: "servicii case lemn, cabane a-frame, foișoare lemn, terase lemn, anexe lemn, David Construct"
-}
-
 export default function ServicesPage() {
   return (
     <>
