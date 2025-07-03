@@ -17,6 +17,12 @@ const formSchema = z.object({
   message: z.string().min(10, { message: "Mesajul trebuie să aibă cel puțin 10 caractere." }).max(500, { message: "Mesajul nu poate depăși 500 de caractere." }),
 });
 
+export const metadata = {
+  title: "Contact | David Construct - Case și Construcții din Lemn",
+  description: "Contactează David Construct pentru oferte, consultanță sau informații despre case și construcții din lemn. Suntem aici să te ajutăm!",
+  keywords: "contact David Construct, oferta case lemn, consultanta lemn, date contact lemn"
+}
+
 export default function ContactPage() {
   const { toast } = useToast();
   const form = useForm<z.infer<typeof formSchema>>({

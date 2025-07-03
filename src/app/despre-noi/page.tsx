@@ -3,6 +3,12 @@ import { testimonials } from "@/lib/data";
 import { Handshake, Target, Gem, Star } from "lucide-react";
 import Image from "next/image";
 
+export const metadata = {
+  title: "Despre Noi | David Construct - Experți în Construcții din Lemn",
+  description: "Află povestea David Construct, valorile, misiunea și echipa noastră dedicată construcțiilor din lemn de calitate.",
+  keywords: "despre David Construct, echipa case lemn, experti lemn, poveste David Construct"
+}
+
 export default function AboutPage() {
   return (
     <>

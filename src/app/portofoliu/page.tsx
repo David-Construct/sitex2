@@ -9,6 +9,12 @@ import Image from "next/image";
 
 const categories = ["Toate", "Case din Lemn", "Căsuțe A-frame", "Construcții din Lemn"];
 
+export const metadata = {
+  title: "Portofoliu | David Construct - Proiecte Case și Construcții din Lemn",
+  description: "Vezi portofoliul David Construct: case din lemn, cabane A-frame, foișoare și alte proiecte realizate cu pasiune și atenție la detalii.",
+  keywords: "portofoliu case lemn, proiecte cabane lemn, lucrari David Construct, case a-frame, foișoare lemn"
+}
+
 export default function PortfolioPage() {
   const [filter, setFilter] = useState("Toate");
 

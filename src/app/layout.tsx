@@ -56,6 +56,21 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "LocalBusiness",
+          "name": "David Construct",
+          "image": "https://www.davidconstruct.ro/logo.png",
+          "telephone": "+40 724 084 555",
+          "email": "contact.davidconstruct@gmail.com",
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "RO"
+          },
+          "url": "https://www.davidconstruct.ro"
+        }
+        </script>
       </head>
       <body
         className={cn(
