@@ -1,4 +1,8 @@
-"use client";
+export const metadata = {
+  title: "Contact | David Construct - Case și Construcții din Lemn",
+  description: "Contactează David Construct pentru oferte, consultanță sau informații despre case și construcții din lemn. Suntem aici să te ajutăm!",
+  keywords: "contact David Construct, oferta case lemn, consultanta lemn, date contact lemn"
+}
 
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -17,13 +21,7 @@ const formSchema = z.object({
   message: z.string().min(10, { message: "Mesajul trebuie să aibă cel puțin 10 caractere." }).max(500, { message: "Mesajul nu poate depăși 500 de caractere." }),
 });
 
-export const metadata = {
-  title: "Contact | David Construct - Case și Construcții din Lemn",
-  description: "Contactează David Construct pentru oferte, consultanță sau informații despre case și construcții din lemn. Suntem aici să te ajutăm!",
-  keywords: "contact David Construct, oferta case lemn, consultanta lemn, date contact lemn"
-}
-
-export default function ContactPage() {
+function ContactForm() {
   const { toast } = useToast();
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -44,6 +42,68 @@ export default function ContactPage() {
     form.reset();
   }
 
+  return (
+    <Form {...form}>
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+        <FormField
+          control={form.control}
+          name="name"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Nume și Prenume</FormLabel>
+              <FormControl>
+                <Input placeholder="Ion Popescu" {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="email"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Adresă de Email</FormLabel>
+              <FormControl>
+                <Input placeholder="exemplu@email.com" {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+         <FormField
+          control={form.control}
+          name="phone"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Număr de Telefon</FormLabel>
+              <FormControl>
+                <Input placeholder="0724 084 555" {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="message"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Mesajul Dvs.</FormLabel>
+              <FormControl>
+                <Textarea placeholder="Aș dori o ofertă pentru o casă din lemn..." className="min-h-[120px]" {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <Button type="submit" size="lg">Trimite Mesajul</Button>
+      </form>
+    </Form>
+  );
+}
+
+export default function ContactPage() {
   return (
     <>
       <section className="w-full py-12 md:py-24">
@@ -68,7 +128,7 @@ export default function ContactPage() {
                 <h2 className="text-3xl font-bold font-headline">Date de Contact</h2>
                 <div className="space-y-3 text-lg text-muted-foreground">
                     <p className="flex items-center gap-3">
-                        <Phone className="h-6 w-6 text-primary" />
+                        <Mail className="h-6 w-6 text-primary" />
                         <a href="tel:+40724084555" className="hover:text-primary transition-colors">+40 724 084 555</a>
                     </p>
                      <p className="flex items-center gap-3">
@@ -89,25 +149,7 @@ export default function ContactPage() {
           </div>
           <div className="space-y-8">
              <h2 className="text-3xl font-bold font-headline">Trimite-ne un Mesaj</h2>
-            <form action="https://formsubmit.co/contact.davidconstruct@gmail.com" method="POST" className="space-y-4">
-              <div>
-                <label className="block font-medium mb-1" htmlFor="name">Nume și Prenume</label>
-                <input type="text" id="name" name="name" placeholder="Ion Popescu" required minLength={2} className="w-full px-3 py-2 border rounded-md" />
-              </div>
-              <div>
-                <label className="block font-medium mb-1" htmlFor="email">Adresă de Email</label>
-                <input type="email" id="email" name="email" placeholder="exemplu@email.com" required className="w-full px-3 py-2 border rounded-md" />
-              </div>
-              <div>
-                <label className="block font-medium mb-1" htmlFor="phone">Număr de Telefon</label>
-                <input type="text" id="phone" name="phone" placeholder="0724 084 555" required minLength={10} className="w-full px-3 py-2 border rounded-md" />
-              </div>
-              <div>
-                <label className="block font-medium mb-1" htmlFor="message">Mesajul Dvs.</label>
-                <textarea id="message" name="message" placeholder="Aș dori o ofertă pentru o casă din lemn..." required minLength={10} maxLength={500} className="w-full px-3 py-2 border rounded-md min-h-[120px]" />
-              </div>
-                <Button type="submit" size="lg">Trimite Mesajul</Button>
-              </form>
+            <ContactForm />
           </div>
         </div>
       </section>
