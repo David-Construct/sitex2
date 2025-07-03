@@ -4,8 +4,7 @@ export const metadata = {
   keywords: "portofoliu case lemn, proiecte cabane lemn, lucrari David Construct, case a-frame, foișoare lemn"
 }
 
-import dynamic from "next/dynamic";
-const ClientPortfolio = dynamic(() => import("./ClientPortfolio"), { ssr: false });
+import ClientPortfolio from "./ClientPortfolio";
 
 export default function PortfolioPage() {
   return (
