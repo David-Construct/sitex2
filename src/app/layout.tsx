@@ -7,7 +7,10 @@ import { Toaster } from "@/components/ui/toaster";
 import { MetadataRoute } from 'next'
 
 export const metadata: Metadata = {
-  title: "David Construct | Specialiști în Construcții din Lemn",
+  title: {
+    default: "David Construct | Specialiști în Construcții din Lemn",
+    template: "%s | David Construct",
+  },
   description: "David Construct este specialistul tău în construcții din lemn. Realizăm case, cabane A-frame, foișoare și alte structuri din lemn de calitate superioară.",
   keywords: "case din lemn, cabane A-frame, foișoare, construcții din lemn, case pe structură de lemn, anexe din lemn, terase din lemn",
   authors: [{ name: "David Construct" }],
@@ -38,7 +41,7 @@ export const metadata: Metadata = {
     description: 'David Construct este specialistul tău în construcții din lemn. Realizăm case, cabane A-frame, foișoare și alte structuri din lemn de calitate superioară.',
   },
   verification: {
-    google: 'google-site-verification=Z-ChwzBNQIjHi69tL8jd4dc5eP-W9cYapM_Z4J7F_o4', // Înlocuiește cu codul tău de verificare Google
+    google: 'google-site-verification=Z-ChwzBNQIjHi69tL8jd4dc5eP-W9cYapM_Z4J7F_o4',
   },
 };
 
@@ -49,14 +52,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ro" suppressHydrationWarning>
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet" />
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-      </head>
       <body
         className={cn(
           "min-h-screen bg-background font-body antialiased"
