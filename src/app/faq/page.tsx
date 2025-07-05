@@ -6,6 +6,11 @@ import {
 } from "@/components/ui/accordion";
 import { faqItems } from "@/lib/data";
 
+export const metadata = {
+  title: "Întrebări Frecvente | David Construct",
+  description: "Răspunsuri la cele mai frecvente întrebări despre construcțiile din lemn, proces, materiale și colaborare cu David Construct.",
+};
+
 export default function FaqPage() {
   return (
     <>

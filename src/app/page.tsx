@@ -5,6 +5,11 @@ import { ArrowRight, CheckCircle2 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
+export const metadata = {
+  title: "David Construct | Specialiști în Construcții din Lemn",
+  description: "David Construct este specialistul tău în construcții din lemn. Realizăm case, cabane A-frame, foișoare și alte structuri din lemn de calitate superioară.",
+};
+
 export default function Home() {
   return (
     <div className="flex flex-col min-h-[100dvh]">
