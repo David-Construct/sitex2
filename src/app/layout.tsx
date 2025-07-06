@@ -27,6 +27,17 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
+  icons: {
+    icon: [
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon-96x96.png", sizes: "96x96", type: "image/png" },
+      { url: "/favicon.ico", type: "image/x-icon" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }
+    ],
+    apple: "/apple-touch-icon.png",
+  },
+  manifest: "/site.webmanifest",
   openGraph: {
     type: 'website',
     locale: 'ro_RO',
@@ -66,8 +77,4 @@ export default function RootLayout({
       </body>
     </html>
   );
-}
-
-export function sitemap(): MetadataRoute.Sitemap {
-  // ... return array cu url-urile ...
 }
